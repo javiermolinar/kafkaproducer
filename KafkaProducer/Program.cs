@@ -19,7 +19,7 @@ namespace kafkaproducer
 
             using (var producer = new Producer<Null, string>(config, null, new StringSerializer(Encoding.UTF8)))
             {
-                var dr = producer.ProduceAsync("test", null, "test message text").Result;
+                var dr = producer.ProduceAsync("test", null, "Nuevo mensaje").Result;                
                 Console.WriteLine($"Delivered '{dr.Value}' to: {dr.TopicPartitionOffset}");
             }
         }
